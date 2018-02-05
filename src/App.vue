@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <dragable-tree></dragable-tree>
+    <drag-list></drag-list>
   </div>
 </template>
 
 <script>
-import DragableTree from './components/dragableTree'
+import dragList from './components/DragList'
 export default {
   name: 'App',
   components: {
-    DragableTree
+    dragList
   }
 }
 </script>

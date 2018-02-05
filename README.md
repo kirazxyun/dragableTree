@@ -1,6 +1,6 @@
 # drable-tree
 
-> 可拖拽的树
+> 可拖拽的list
 
 ## Build Setup
 
