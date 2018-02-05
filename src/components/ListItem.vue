@@ -1,7 +1,7 @@
 <template>
-  <div>
-
-  </div>
+  <dd>
+    <span>故障分析</span>
+  </dd>
 </template>
 
 <script>

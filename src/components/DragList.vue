@@ -1,12 +1,20 @@
 <template>
-  <div>
-    假装自己是列表
+  <div class="dashboard-folder__main">
+    <list-group>
+      <list-item></list-item>
+    </list-group>
   </div>
 </template>
 
 <script>
+import listItem from './ListItem'
+import listGroup from './ListGroup'
 export default {
-  name: 'drag-list'
+  name: 'drag-list',
+  components: {
+    listItem,
+    listGroup
+  }
 }
 </script>
 

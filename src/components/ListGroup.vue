@@ -1,7 +1,8 @@
 <template>
-  <div>
-
-  </div>
+  <dl class="dashboard-folder__item">
+    <dt></dt>
+    <slot></slot>
+  </dl>
 </template>
 
 <script>
