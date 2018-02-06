@@ -1,8 +1,10 @@
 <template>
   <div>
     <list-group v-for="group in data" :key="group.id" :name="group.id">
-      <p slot="title">{{ group.label }}</p>
-      <list-item  v-for="item in group.children" :key="item.id" :name="item.id"></list-item>
+      <span slot="title">{{ group.label }}</span>
+      <list-item v-for="item in group.children" :key="item.id" :name="item.id" >
+        <span>{{ item.label }}</span>
+      </list-item>
     </list-group>
   </div>
 </template>
@@ -25,6 +27,9 @@ export default {
       default () {
         return []
       }
+    },
+    activeName: {
+      type: String
     }
   },
   data () {
