@@ -1,7 +1,7 @@
 <template>
-  <dd>
+  <li>
     <span>{{ name }}</span>
-  </dd>
+  </li>
 </template>
 
 <script>

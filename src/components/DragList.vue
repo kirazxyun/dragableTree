@@ -1,5 +1,5 @@
 <template>
-  <div :class="`${prefixCls}__main`">
+  <div>
     <list-group v-for="group in data" :key="group.id" :name="group.id">
       <p slot="title">{{ group.label }}</p>
       <list-item  v-for="item in group.children" :key="item.id" :name="item.id"></list-item>

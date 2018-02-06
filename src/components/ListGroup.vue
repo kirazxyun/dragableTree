@@ -1,8 +1,8 @@
 <template>
-  <dl :class="`${prefixCls}__item`">
-    <dt><slot name="title"></slot></dt>
-    <slot></slot>
-  </dl>
+  <div :class="[`${prefixCls}__item`, 'is-opened']">
+    <div class="head"><slot name="title"></slot></div>
+    <ul class="body"><slot></slot></ul>
+  </div>
 </template>
 
 <script>

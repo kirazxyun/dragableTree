@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+import './assets/iview.css'
 import './styles/index.less'
 
 Vue.config.productionTip = false
