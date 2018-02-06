@@ -1,15 +1,26 @@
 <template>
-  <dl class="dashboard-folder__item">
-    <dt></dt>
+  <dl :class="`${prefixCls}__item`">
+    <dt><slot name="title"></slot></dt>
     <slot></slot>
   </dl>
 </template>
 
 <script>
-  export default {
-    name: 'list-group',
-    data () {}
+const prefixCls = 'dashboard-folder'
+export default {
+  name: 'list-group',
+  props: {
+    name: {
+      type: String,
+      default: ''
+    }
+  },
+  data () {
+    return {
+      prefixCls: prefixCls
+    }
   }
+}
 </script>
 
 <style scoped>

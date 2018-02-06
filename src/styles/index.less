@@ -1,0 +1,148 @@
+@prefix                    : one-;
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dashboard-folder{
+	&__header{
+		padding: 0 0 0 15px;
+		height: 48px;
+		line-height: 48px;
+		border-bottom: 1px solid #e6e6e6;
+		>strong{
+			font-size:14px;
+			font-weight: normal;
+			color:#1e2126;
+		}
+		.tools{
+			float: right;
+			font-size: 0;
+			height: inherit;
+		}
+		.tool-item{
+			padding: 0 8px;
+			font-size: 15px;
+			position: relative;
+			color: #828691;
+			&:before,
+			&:after{
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -6px;
+				width: 1px;
+				height: 12px;
+				overflow: hidden;
+			}
+			&:before{
+				background-color: #e4eaf0;
+			}
+			&:after{
+				right: -1px;
+				background-color: #fff;
+			}
+			&:last-child{
+				&:before,
+				&:after{
+					content: none;
+				}
+			}
+			&--add{
+				display: inline;
+				cursor: pointer;
+				.@{prefix}dropdown{
+					top: 20px;
+					&:before{
+						left: 10px;
+					}
+					&__inner{
+						ul{
+							width: 120px;
+						}
+					}
+				}
+				&:hover{
+					.@{prefix}dropdown{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	&__item{
+		padding: 0;
+		>dt{
+			width: 100%;
+			margin:0;
+			padding: 0 10px 0 15px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			color:#303946;
+			background-color: #fff;
+			.text-overflow();
+			&:before{
+				margin-right: 6px;
+				font-family: 'oneicon';
+				font-size: 15px;
+				content: "\e903";
+			}
+		}
+		>dd{
+			position: relative;
+			padding: 0 20px 0 58px;
+			height: 40px;
+			line-height: 40px;
+			color:#6a6e78;
+			cursor: pointer;
+			font-size: 0;
+			&:before{
+				position: absolute;
+				left: 36px;
+				top: 0;
+				font-family: 'oneicon';
+				font-size: 16px;
+				content: "\e90b";
+				color: #4b4d53;
+				/* line-height: 40px;
+				display: inline-block;
+				vertical-align: middle; */
+			}
+			&.isShare{
+				&:before{
+					content: "\e90c";
+				}
+			}
+			&:hover{
+				color:#1e2126;
+				background-color:#e6e8eb;
+			}
+			>span{
+				font-size: 12px;
+				display: block;
+				.text-overflow();
+			}
+			.more-box{
+				position: absolute;
+				top: 50%;
+				right: 5px;
+				margin-top: -9px;
+				font-size: 18px;
+				.@{prefix}dropdown{
+					top: 18px;
+					left: -45px;
+					&:before{
+						left: 49px;
+					}
+				}
+				&:hover{
+					.@{prefix}dropdown{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

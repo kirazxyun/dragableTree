@@ -1,14 +1,22 @@
 <template>
   <dd>
-    <span>故障分析</span>
+    <span>{{ name }}</span>
   </dd>
 </template>
 
 <script>
-  export default {
-    name: 'list-item',
-    data () {}
+export default {
+  name: 'list-item',
+  props: {
+    name: {
+      style: String,
+      default: ''
+    }
+  },
+  data () {
+    return {}
   }
+}
 </script>
 
 <style scoped>
