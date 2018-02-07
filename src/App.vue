@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <drag-list v-model="listData"></drag-list>
+    <drag-list v-model="listData"
+               :active-name="activeName"
+               :open-names="openNames"
+               @on-select="handleSelect"
+               @on-opened-change="handleOpenedChange"
+               @on-group-toolbar-click="handleGroupToolBarClick"
+               @on-item-toolbar-click="handleItemToolBarClick"></drag-list>
   </div>
 </template>
 
 <script>
 import dragList from './components/DragList'
-const listData = [
+const resource = [
   {
     'id': '1', // 节点id
     'label': '点播产品', // 节点名称
@@ -67,13 +73,33 @@ export default {
   },
   computed: {
     listData () {
-      console.log(this.$store.state)
       return this.$store.state.listData
+    },
+    activeName () {
+      return this.$store.state.activeName
+    },
+    openNames () {
+      return this.$store.state.openNames
+    }
+  },
+  methods: {
+    handleSelect (name) {
+      this.$store.commit('setActiveName', name)
+    },
+    handleOpenedChange (openNameArr) {
+      this.$store.commit('setOpenNames', openNameArr)
+    },
+    handleGroupToolBarClick (type, groupObj) {
+    },
+
+    handleItemToolBarClick (type, itemObj) {
+      console.log(type)
     }
   },
   mounted () {
-    this.$store.commit('setListData', listData)
-      console.log(this.$store.state)
+    setTimeout(() => {
+      this.$store.commit('setListData', resource)
+    }, 1000)
   }
 }
 </script>

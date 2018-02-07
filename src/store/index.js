@@ -6,12 +6,18 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     listData: [],
-    activeName: '',
-    openNames: []
+    activeName: '1-1',
+    openNames: ['1', '2']
   },
   mutations: {
     setListData (state, listData) {
       state.listData = listData
+    },
+    setActiveName (state, name) {
+      state.activeName = name
+    },
+    setOpenNames (state, openNames) {
+      state.openNames = openNames
     }
   },
   actions: {
